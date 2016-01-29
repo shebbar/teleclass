@@ -1,0 +1,21 @@
+<% provide(:title, @subject.name) %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Telephone Id:</strong>
+  <%= @subject.sub_id %>
+</p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @subject.grade %>
+</p>
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>

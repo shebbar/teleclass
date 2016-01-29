@@ -1,0 +1,10 @@
+<% provide(:title, 'Registration Details') %>
+<p id="notice"><%= notice %></p>
+<div class="row">
+	<%= @registration.id %>
+	<%= @registration.pin.pincode %>
+	<%= @registration.user.name %>
+	<%= @registration.subject.name %>
+</div>
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>

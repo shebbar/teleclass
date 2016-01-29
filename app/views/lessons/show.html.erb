@@ -1,0 +1,25 @@
+<% provide(:title, 'Show Lesson') %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Telephone Id:</strong>
+  <%= @lesson.les_id %>
+</p>
+
+<p>
+  <strong>Subject Name:</strong>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <strong>Grade</strong>
+  <%= @subject.grade %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lesson.name %>
+</p>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>

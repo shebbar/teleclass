@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for(@registration) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.association :pin %>
+        <%= f.association :user %>
+				<%= f.association :subject %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

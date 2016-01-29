@@ -1,0 +1,15 @@
+<% provide(:title, 'Show Audio_File') %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>IVR Code:</strong>
+  <%= @audio_file.telephone_code %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @audio_file.title %>
+</p>
+
+<%= link_to 'Edit', edit_audio_file_path(@audio_file) %> |
+<%= link_to 'Back', audio_files_path %>

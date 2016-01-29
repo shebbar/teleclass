@@ -1,0 +1,2 @@
+class PinValidationController < ApplicationController
+end

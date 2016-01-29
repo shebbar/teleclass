@@ -1,0 +1,30 @@
+<% provide(:title, 'Show Calls') %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pin:</strong>
+  <%= @call.pin_id %>
+</p>
+
+<p>
+  <strong>Lesson:</strong>
+  <%= @call.lesson_id %>
+</p>
+
+<p>
+  <strong>Call date:</strong>
+  <%= @call.call_date %>
+</p>
+
+<p>
+  <strong>Call time:</strong>
+  <%= @call.call_time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @call.duration %>
+</p>
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>

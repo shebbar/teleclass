@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for(@call) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.association :pin %>
+				<%= f.association :lesson %>
+        <%= f.input :call_date, :as => :date_picker %>
+				<%= f.input :call_time, :as => :time_picker %>
+				<%= f.input :duration %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

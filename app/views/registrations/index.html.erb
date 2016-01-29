@@ -1,0 +1,17 @@
+<% provide(:title, 'Listing Registrations') %>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Registrations</h1>
+
+    <% @registrations.each do |registration| %>
+			<% registration.id %>
+			<% registration.pin.pincode %>
+			<% registration.user.name %>
+			<% registration.subject.name %>
+      <%= link_to 'Show', registration %></td>
+      <%= link_to 'Edit', edit_registration_path(registration) %></td>
+      <%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
+<br>
+
+<%= link_to 'New Registration', new_registration_path %>

@@ -1,0 +1,30 @@
+<% provide(:title, 'Listing Audio Files') %>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Audio Files</h1>
+
+<table>
+  <thead>
+    <tr>
+			<th>IVR Code</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audio_files.each do |audio_file| %>
+      <tr>
+				<td><%= audio_file.telephone_code %></td>
+        <td><%= audio_file.title %></td>
+        <td><%= link_to 'Show', audio_file %></td>
+        <td><%= link_to 'Edit', edit_audio_file_path(audio_file) %></td>
+        <td><%= link_to 'Destroy', audio_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Audio file', new_audio_file_path %>
