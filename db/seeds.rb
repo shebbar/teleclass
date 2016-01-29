@@ -10,5 +10,5 @@
 #user.update_attribute(:activated, true)
 #user.update_attribute(:activated_at, Time.zone.now)
 #user.attributes = {admin: true, activated: true, activated_at: Time.zone.now}
-pin = Pins.find(1)
+pin = Pin.find(1)
 pin.update_attribute(:activated, true)
