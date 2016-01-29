@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = User.find(7)
+#user = User.find(7)
 #user.update_attribute(:admin, true)
-user.update_attribute(:activated, true)
-user.update_attribute(:activated_at, Time.zone.now)
+#user.update_attribute(:activated, true)
+#user.update_attribute(:activated_at, Time.zone.now)
 #user.attributes = {admin: true, activated: true, activated_at: Time.zone.now}
