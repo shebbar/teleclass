@@ -4,6 +4,40 @@
     <section class="user_info">
       <h1>
         <%= "#{@user.first_name}" + " " + "#{@user.last_name}" %>
+  				<% if @user.admin? %>
+						<br>
+						<br>
+  					Admin Page
+						<br>
+						<br>
+  				<ul>
+    				<%= link_to "Pins", pins_path, class: "btn btn-info" %></li>
+    				<br>
+						<br>
+
+    				<%= link_to "Registrations", registrations_path, class: "btn btn-info" %></li>
+    				<br>
+	  				<br>
+
+    				<%= link_to "Subjects", subjects_path, class: "btn btn-info" %></li>
+    				<br>
+    				<br>
+
+    				<%= link_to "Lessons", lessons_path, class: "btn btn-info" %></li>
+    				<br>
+    				<br>
+
+    				<%= link_to "Audio Files", audio_files_path, class: "btn btn-info" %></li>
+    				<br>
+   					<br>
+
+    				<%= link_to "Calls Records", calls_path, class: "btn btn-info" %></li>
+    				<br>
+   					<br>
+
+  				</ul>
+  			<% end %>
+
       </h1>
     </section>
   </aside>

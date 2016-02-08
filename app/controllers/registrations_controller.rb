@@ -62,6 +62,11 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def import
+    Registration.import(params[:file])
+    redirect_to registrations_url, notice: "Registrations imported."
+  end
+	
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registration

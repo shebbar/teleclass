@@ -21,6 +21,7 @@ source 'https://rubygems.org'
 	gem 'will_paginate',           '3.0.7'
 	gem 'bootstrap-will_paginate', '0.0.10'
   gem 'figaro'
+	gem "bootstrap-table-rails"
 
 group :development, :test do
   gem 'byebug',      '3.4.0'

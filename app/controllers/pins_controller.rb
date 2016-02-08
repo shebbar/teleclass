@@ -29,7 +29,7 @@ class PinsController < ApplicationController
 		unless @pin.blank? 
 			if @pin.activated?
 				pinid = "#{@pin.id}"
-				json_msg = ActiveSupport::JSON.encode({ status: "VALID", pin_id: pinid })
+				json_msg = ActiveSupport::JSON.encode({ status: "VALID", pin: @pin.pincode })
 			else
 				json_msg = ActiveSupport::JSON.encode({ status: "VALID BUT UNACTIVATED" })
 			end
@@ -79,6 +79,11 @@ class PinsController < ApplicationController
     end
   end
 
+	def import
+  	Pin.import(params[:file])
+  	redirect_to pins_url, notice: "Pin codes imported."
+	end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
@@ -87,6 +92,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:pincode, :serialcode, :user_id)
+      params.require(:pin).permit(:pincode, :serialcode, :user_id, :activated)
     end
 end

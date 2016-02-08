@@ -4,8 +4,9 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.association :pin %>
-				<%= f.association :lesson %>
+        <%= f.input :pin_code %>
+				<%= f.input :subject_code %>
+				<%= f.input :lesson_code %>
         <%= f.input :call_date, :as => :date_picker %>
 				<%= f.input :call_time, :as => :time_picker %>
 				<%= f.input :duration %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128190401) do
+ActiveRecord::Schema.define(version: 20160205110500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,15 +30,14 @@ ActiveRecord::Schema.define(version: 20160128190401) do
     t.date     "call_date"
     t.time     "call_time"
     t.string   "duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "pin_id"
-    t.integer  "lesson_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "pin_code"
+    t.string   "lesson_code"
+    t.string   "subject_code"
   end
 
-  add_index "calls", ["lesson_id"], name: "index_calls_on_lesson_id", using: :btree
-  add_index "calls", ["pin_id", "lesson_id"], name: "index_pin_lessons", using: :btree
-  add_index "calls", ["pin_id"], name: "index_calls_on_pin_id", using: :btree
+  add_index "calls", ["pin_code", "lesson_code", "subject_code"], name: "index_pin_sub_lessons", using: :btree
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"

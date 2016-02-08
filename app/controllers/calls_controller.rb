@@ -62,6 +62,11 @@ class CallsController < ApplicationController
     end
   end
 
+  def import
+    Call.import(params[:file])
+    redirect_to calls_url, notice: "Call Details imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_call
@@ -70,6 +75,6 @@ class CallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_params
-      params.require(:call).permit(:pin_id, :lesson_id, :call_date, :call_time, :duration)
+      params.require(:call).permit(:pin_code, :subject_code, :lesson_code, :call_date, :call_time, :duration)
     end
 end

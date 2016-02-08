@@ -20,13 +20,13 @@ class LessonsController < ApplicationController
 		@subject = Subject.find_by(sub_id: params[:sub_id])
 		unless @subject.blank?
 			@lesson = Lesson.find_by(les_id: params[:les_id], subject_id: @subject.id)
-#			@lesson = @subject.lessons.where(les_id: params[:les_id])
+#			@lesson = @subject.lessons.where(les_id: params[:les_id]).first
 				unless @lesson.blank?
 					@pin = Pin.where(pincode: params[:pincode]).first
 					unless @pin.blank?
-						@calls_count = Call.where(lesson_id: @lesson.id, pin_id: @pin.id).count
+						@calls_count = Call.where(subject_code: @subject.sub_id, lesson_code: @lesson.les_id, pin_code: @pin.pincode).count
 						if @calls_count < 3
-							json_msg = ActiveSupport::JSON.encode({ status: "VALID", pin_id: @pin.id, les_id: @lesson.id, count: @calls_count })
+							json_msg = ActiveSupport::JSON.encode({ status: "VALID", pin: @pin.pincode, subject_code: @subject.sub_id, lesson_code: @lesson.les_id, count: @calls_count })
 						else
 							json_msg = ActiveSupport::JSON.encode({ status: "LIMIT EXCEEDED", count: @calls_count })
 						end
