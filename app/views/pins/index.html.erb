@@ -16,7 +16,6 @@
     <tr>
       <th>Pincode</th>
       <th>Serialcode</th>
-			<th>User</th>
 			<th>Subscribed?</th>
       <th colspan="3"></th>
     </tr>
@@ -27,7 +26,6 @@
       <tr>
         <td><%= pin.pincode %></td>
         <td><%= pin.serialcode %></td>
-				<td><%= pin.user.name unless pin.user.blank? %></td>
 				<td><%= pin.activated %></td>
         <td><%= link_to 'Show', pin %></td>
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
